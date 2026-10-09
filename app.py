@@ -239,7 +239,11 @@ class TaskManager:
                     self.bosh_status = {"ok": True, "name": name, "error": None}
             else:
                 with self.lock:
-                    self.bosh_status = {"ok": False, "name": None, "error": err.strip() or "bosh env failed"}
+                    self.bosh_status = {
+                        "ok": False,
+                        "name": None,
+                        "error": (err or out).strip().splitlines()[0][:200] if (err or out).strip() else "bosh env failed",
+                    }
         except Exception as exc:  # noqa: BLE001
             with self.lock:
                 self.bosh_status = {"ok": False, "name": None, "error": str(exc)}

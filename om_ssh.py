@@ -147,6 +147,16 @@ class OmSSH:
             return
         self.connect()
 
+    # OM puts BOSH_* in ~/.bashrc *after* the interactive-only `return`, so
+    # `bash -lc` never loads them. Eval only those export lines on the OM VM
+    # (secrets never leave the box).
+    _BOSH_ENV = (
+        'eval "$(grep -E \'^export BOSH_\' /home/ubuntu/.bashrc 2>/dev/null || true)"'
+    )
+
+    def _remote_bash(self, inner):
+        return "bash -lc " + shlex.quote(f"{self._BOSH_ENV}; {inner}")
+
     def exec_bosh(self, args, timeout=60):
         """Run `bosh <args>` on the OM VM and return (status, stdout, stderr)."""
         return self._exec(f"bosh {args}", timeout=timeout)
@@ -155,17 +165,10 @@ class OmSSH:
         self.ensure_connected()
         with self._lock:
             client = self._client
-        cmd = "bash -lc " + shlex.quote(bosh_cmd)
-        _stdin, stdout, stderr = client.exec_command(cmd, timeout=timeout)
+        _stdin, stdout, stderr = client.exec_command(self._remote_bash(bosh_cmd), timeout=timeout)
         out = stdout.read().decode("utf-8", "replace")
         err = stderr.read().decode("utf-8", "replace")
         status = stdout.channel.recv_exit_status()
-        if status != 0 and "not found" in (err + out).lower():
-            cmd2 = "bash -lc " + shlex.quote(f"source /home/ubuntu/.profile; {bosh_cmd}")
-            _stdin, stdout, stderr = client.exec_command(cmd2, timeout=timeout)
-            out = stdout.read().decode("utf-8", "replace")
-            err = stderr.read().decode("utf-8", "replace")
-            status = stdout.channel.recv_exit_status()
         return status, out, err
 
     def stream_bosh_lines(self, args, timeout=None):
@@ -178,8 +181,9 @@ class OmSSH:
         self.ensure_connected()
         with self._lock:
             client = self._client
-        cmd = "bash -lc " + shlex.quote(f"bosh {args}")
-        _stdin, stdout, _stderr = client.exec_command(cmd, timeout=timeout)
+        _stdin, stdout, _stderr = client.exec_command(
+            self._remote_bash(f"bosh {args}"), timeout=timeout
+        )
         for raw in iter(stdout.readline, ""):
             if raw == "":
                 break
