@@ -1,0 +1,15 @@
+---
+applications:
+- name: bosh-task-viz
+  memory: 512M
+  disk_quota: 1G
+  instances: 1
+  timeout: 180
+  stack: cflinuxfs4
+  buildpacks:
+  - python_buildpack
+  host: bosh-task-viz
+  services:
+  - ops-manager-ssh
+  env:
+    PYTHONUNBUFFERED: "1"

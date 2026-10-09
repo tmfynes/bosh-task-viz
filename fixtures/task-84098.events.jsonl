@@ -1,0 +1,21 @@
+{"time":1791555374,"stage":"Preparing deployment","tags":[],"total":1,"task":"Preparing deployment","index":1,"state":"started","progress":0}
+{"time":1791555374,"type":"warning","message":"DNS address not available for the link provider instance: control/7938d5be-a260-4818-8b0e-95a2726c5a73"}
+{"time":1791555374,"type":"warning","message":"DNS address not available for the link provider instance: database/9d14235a-2650-44a8-8eb1-a8b2663fb85a"}
+{"time":1791555377,"stage":"Preparing deployment","tags":[],"total":1,"task":"Preparing deployment","index":1,"state":"finished","progress":100}
+{"time":1791555377,"stage":"Preparing deployment","tags":[],"total":1,"task":"Rendering templates","index":2,"state":"started","progress":0}
+{"time":1791555378,"stage":"Preparing deployment","tags":[],"total":1,"task":"Rendering templates","index":2,"state":"finished","progress":100}
+{"time":1791555378,"stage":"Preparing package compilation","tags":[],"total":1,"task":"Finding packages to compile","index":1,"state":"started","progress":0}
+{"time":1791555378,"stage":"Preparing package compilation","tags":[],"total":1,"task":"Finding packages to compile","index":1,"state":"finished","progress":100}
+{"time":1791555378,"stage":"Creating missing vms","tags":[],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)","index":1,"state":"started","progress":0}
+{"time":1791555434,"stage":"Creating missing vms","tags":[],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)","index":1,"state":"finished","progress":100}
+{"time":1791555444,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"started","progress":0}
+{"time":1791555463,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":5,"data":{"status":"executing pre-stop"}}
+{"time":1791555463,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":10,"data":{"status":"executing drain"}}
+{"time":1791555463,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":30,"data":{"status":"stopping jobs"}}
+{"time":1791555464,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":40,"data":{"status":"executing post-stop"}}
+{"time":1791555502,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":50,"data":{"status":"installing packages"}}
+{"time":1791555506,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":60,"data":{"status":"configuring jobs"}}
+{"time":1791555506,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":70,"data":{"status":"executing pre-start"}}
+{"time":1791555508,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":90,"data":{"status":"starting jobs"}}
+{"time":1791555569,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"in_progress","progress":100,"data":{"status":"executing post-start"}}
+{"time":1791555570,"stage":"Updating instance","tags":["postgres-instance"],"total":1,"task":"postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) (canary)","index":1,"state":"finished","progress":100}

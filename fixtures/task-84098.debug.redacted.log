@@ -1,0 +1,274 @@
+I, [2026-10-09T14:16:12.794823 #29] [0xaa4a80]  INFO -- TaskHelper: Director Version: 283.1.0
+I, [2026-10-09T14:16:12.794849 #29] [0xaa4a80]  INFO -- TaskHelper: Enqueuing task: 84098
+I, [2026-10-09T14:16:12.954575 #163483] []  INFO -- DirectorJobRunner: Looking for task with task id 84098
+I, [2026-10-09T14:16:12.964113 #163483] []  INFO -- DirectorJobRunner: Found task #<Bosh::Director::Models::Task @values={id: 84098, state: "processing", timestamp: 2026-10-09 14:16:12.786733 UTC, description: "create deployment", result: nil, output: "/var/vcap/store/director/tasks/84098", checkpoint_time: 2026-10-09 14:16:12.900305 UTC, type: "update_deployment", username: "postgres-99cb62541fc22651f819", deployment_name: "service-instance_a8d11c73-e850-4ce1-b4ea-5bb7c7ce9074", started_at: nil, event_output: "", result_output: "", context_id: "84a0fb5b-e5d9-4cfa-b992-a11381c779eb"}>
+I, [2026-10-09T14:16:12.964297 #163483] []  INFO -- DirectorJobRunner: Running from worker 'worker_2' on director/0216649b-4016-424f-538a-215633901d5b (127.0.0.1)
+I, [2026-10-09T14:16:12.964332 #163483] []  INFO -- DirectorJobRunner: Starting task: 84098
+I, [2026-10-09T14:16:12.964701 #163483] [task:84098]  INFO -- DirectorJobRunner: Creating job
+I, [2026-10-09T14:16:12.977697 #163483] [task:84098]  INFO -- DirectorJobRunner: Performing task: #<Bosh::Director::Models::Task @values={id: 84098, state: "processing", timestamp: 2026-10-09 14:16:12.786733 UTC, description: "create deployment", result: nil, output: "/var/vcap/store/director/tasks/84098", checkpoint_time: 2026-10-09 14:16:12.900305 UTC, type: "update_deployment", username: "postgres-99cb62541fc22651f819", deployment_name: "service-instance_a8d11c73-e850-4ce1-b4ea-5bb7c7ce9074", started_at: nil, event_output: "", result_output: "", context_id: "84a0fb5b-e5d9-4cfa-b992-a11381c779eb"}>
+I, [2026-10-09T14:16:12.981408 #163483] [task:84098]  INFO -- DirectorJobRunner: Reading deployment manifest
+I, [2026-10-09T14:16:13.025758 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring deployment lock on service-instance_a8d11c73-e850-4ce1-b4ea-5bb7c7ce9074
+I, [2026-10-09T14:16:13.094574 #163483] [task:84098]  INFO -- DirectorJobRunner: sending update deployment start event
+I, [2026-10-09T14:16:13.504407 #163483] [task:84098]  INFO -- DirectorJobRunner: Creating deployment plan
+I, [2026-10-09T14:16:13.504483 #163483] [task:84098]  INFO -- DirectorJobRunner: Deployment plan options: {"is_deploy_action" => true, "recreate" => false, "recreate_persistent_disks" => false, "recreate_vms_created_before" => nil, "fix" => false, "skip_drain" => nil, "job_states" => {}, "max_in_flight" => nil, "canaries" => nil, "tags" => {}}
+I, [2026-10-09T14:16:14.086919 #163483] [task:84098]  INFO -- DirectorJobRunner: Binding models
+I, [2026-10-09T14:16:14.088530 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: adbr
+I, [2026-10-09T14:16:14.088613 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: bosh-dns
+I, [2026-10-09T14:16:14.088665 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: bosh-dns-aliases
+I, [2026-10-09T14:16:14.088695 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: bpm
+I, [2026-10-09T14:16:14.088715 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: cf-service-gateway
+I, [2026-10-09T14:16:14.088740 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: cfcr-etcd
+I, [2026-10-09T14:16:14.088778 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: loggregator-agent
+I, [2026-10-09T14:16:14.088811 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: postgres-service-adapter
+I, [2026-10-09T14:16:14.088842 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: routing
+I, [2026-10-09T14:16:14.088873 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: system-metrics
+I, [2026-10-09T14:16:14.088904 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: tanzu-on-demand-service-broker
+I, [2026-10-09T14:16:14.088937 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: tanzu-otel-collector
+I, [2026-10-09T14:16:14.088966 #163483] [task:84098]  INFO -- DirectorJobRunner: Acquiring release lock: tanzu-postgres
+I, [2026-10-09T14:16:14.419467 #163483] [task:84098]  INFO -- DirectorJobRunner: New desired instance 'postgres-instance/0' in az 'AZ'
+I, [2026-10-09T14:16:14.419614 #163483] [task:84098]  INFO -- DirectorJobRunner: No existing bootstrap instance. Going to pick a new bootstrap instance.
+I, [2026-10-09T14:16:14.419706 #163483] [task:84098]  INFO -- DirectorJobRunner: Marking new bootstrap instance 'postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)' in az 'AZ'
+W, [2026-10-09T14:16:14.611338 #163483] [task:84098]  WARN -- DirectorJobRunner: DNS address not available for the link provider instance: control/7938d5be-a260-4818-8b0e-95a2726c5a73
+W, [2026-10-09T14:16:14.698303 #163483] [task:84098]  WARN -- DirectorJobRunner: DNS address not available for the link provider instance: database/9d14235a-2650-44a8-8eb1-a8b2663fb85a
+I, [2026-10-09T14:16:18.764120 #163483] [task:84098]  INFO -- DirectorJobRunner: Generating a list of compile requirements
+I, [2026-10-09T14:16:18.766016 #163483] [task:84098]  INFO -- DirectorJobRunner: Job templates 'loggregator-agent/loggregator_agent', 'routing/route_registrar', 'cf-service-gateway/delete-router-group', 'adbr/adbr-scheduler', 'postgres-service-adapter/postgres-agent', 'loggregator-agent/loggr-forwarder-agent', 'tanzu-postgres/postgres', 'tanzu-postgres/postgres-backup', 'tanzu-postgres/postgres-stream-full-backup', 'tanzu-postgres/postgres-stream-incremental-backup', 'tanzu-postgres/adbr-backup-restore', 'tanzu-postgres/postgres-metrics-exporter', 'loggregator-agent/prom_scraper', 'adbr/adbr-agent', 'bpm/bpm', 'bosh-dns/bosh-dns', 'system-metrics/loggr-system-metrics-agent', 'bosh-dns-aliases/bosh-dns-aliases', 'tanzu-otel-collector/otel-collector', 'tanzu-otel-collector/opamp-supervisor' need to run on stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.766111 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'loggregator_agent/6631c8d5ef5c57da9015c1e53858046bc18db492f802471f3531df78b31c269c' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.770917 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'loggregator_agent/6631c8d5ef5c57da9015c1e53858046bc18db492f802471f3531df78b31c269c' dependencies
+I, [2026-10-09T14:16:18.771014 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'loggregator_agent/6631c8d5ef5c57da9015c1e53858046bc18db492f802471f3531df78b31c269c' depends on package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4'
+I, [2026-10-09T14:16:18.771044 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.774707 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4' dependencies
+I, [2026-10-09T14:16:18.776491 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'routing_utils/511b1e5b861302df0589ea7946c2ff5020271e3e1edc5c2780b240fa5b485464' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.780594 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'routing_utils/511b1e5b861302df0589ea7946c2ff5020271e3e1edc5c2780b240fa5b485464' dependencies
+I, [2026-10-09T14:16:18.780670 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'routing_utils/511b1e5b861302df0589ea7946c2ff5020271e3e1edc5c2780b240fa5b485464' depends on package 'golang-1.25-linux/3f3c57f56c530821b19ac15745d1a24ab64b2d5327b1b38cc44625dc5a7bf490'
+I, [2026-10-09T14:16:18.780697 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.25-linux/3f3c57f56c530821b19ac15745d1a24ab64b2d5327b1b38cc44625dc5a7bf490' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.783923 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.25-linux/3f3c57f56c530821b19ac15745d1a24ab64b2d5327b1b38cc44625dc5a7bf490' dependencies
+I, [2026-10-09T14:16:18.785701 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'route_registrar/65b68151749e1f2be84f5da41e03581929131971f8626b4d29fdf7fe46e30159' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.790052 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'route_registrar/65b68151749e1f2be84f5da41e03581929131971f8626b4d29fdf7fe46e30159' dependencies
+I, [2026-10-09T14:16:18.790168 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'route_registrar/65b68151749e1f2be84f5da41e03581929131971f8626b4d29fdf7fe46e30159' depends on package 'golang-1.25-linux/3f3c57f56c530821b19ac15745d1a24ab64b2d5327b1b38cc44625dc5a7bf490'
+I, [2026-10-09T14:16:18.790214 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.25-linux/3f3c57f56c530821b19ac15745d1a24ab64b2d5327b1b38cc44625dc5a7bf490' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.791328 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'cf-service-gateway-golang/85618fd9bab2b3bc1fd280e4fa3b29e70c56cbd9eb0d7d1f687fc4229e8d94b9' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.795499 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'cf-service-gateway-golang/85618fd9bab2b3bc1fd280e4fa3b29e70c56cbd9eb0d7d1f687fc4229e8d94b9' dependencies
+I, [2026-10-09T14:16:18.796513 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'delete-router-group/0013d55769cf12e395fc5cb7a295d7d5ea4eb54a32ff1f63877ead0d15b19136' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.798991 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'delete-router-group/0013d55769cf12e395fc5cb7a295d7d5ea4eb54a32ff1f63877ead0d15b19136' dependencies
+I, [2026-10-09T14:16:18.799052 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'delete-router-group/0013d55769cf12e395fc5cb7a295d7d5ea4eb54a32ff1f63877ead0d15b19136' depends on package 'cf-service-gateway-golang/85618fd9bab2b3bc1fd280e4fa3b29e70c56cbd9eb0d7d1f687fc4229e8d94b9'
+I, [2026-10-09T14:16:18.799078 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'cf-service-gateway-golang/85618fd9bab2b3bc1fd280e4fa3b29e70c56cbd9eb0d7d1f687fc4229e8d94b9' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.799648 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'adbr-scheduler/5d483db51a0546db39eb3dbc617d2ead7008c82f7132f57c825e37d70bd4c876' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.802143 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'adbr-scheduler/5d483db51a0546db39eb3dbc617d2ead7008c82f7132f57c825e37d70bd4c876' dependencies
+I, [2026-10-09T14:16:18.802198 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'adbr-scheduler/5d483db51a0546db39eb3dbc617d2ead7008c82f7132f57c825e37d70bd4c876' depends on package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f'
+I, [2026-10-09T14:16:18.802222 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.807468 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' dependencies
+I, [2026-10-09T14:16:18.809767 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'postgres-agent/091cc296231cc5807e84982af74a3c51603b7998d83d6f8c9fadebb4c854a7a9' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.813935 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'postgres-agent/091cc296231cc5807e84982af74a3c51603b7998d83d6f8c9fadebb4c854a7a9' dependencies
+I, [2026-10-09T14:16:18.814051 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'postgres-agent/091cc296231cc5807e84982af74a3c51603b7998d83d6f8c9fadebb4c854a7a9' depends on package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0'
+I, [2026-10-09T14:16:18.814096 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.817789 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' dependencies
+I, [2026-10-09T14:16:18.818560 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'forwarder-agent/5dab484a6a5d14fb09ae38d6bfd23db44b905b076e3fdb31f6fb7c77864fbdf1' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.822868 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'forwarder-agent/5dab484a6a5d14fb09ae38d6bfd23db44b905b076e3fdb31f6fb7c77864fbdf1' dependencies
+I, [2026-10-09T14:16:18.822971 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'forwarder-agent/5dab484a6a5d14fb09ae38d6bfd23db44b905b076e3fdb31f6fb7c77864fbdf1' depends on package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4'
+I, [2026-10-09T14:16:18.823023 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.823723 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'postgres-common/c146e5da880ccafb5bbadfb3cd017d878e3be872d3d4d5ed860d473415dfb9b6' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.827669 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'postgres-common/c146e5da880ccafb5bbadfb3cd017d878e3be872d3d4d5ed860d473415dfb9b6' dependencies
+I, [2026-10-09T14:16:18.829016 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'boost/c2b775e5889955d6a32538b2ace0692b94ef63dbdb7feaf674d1454a34ee787e' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.835074 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'boost/c2b775e5889955d6a32538b2ace0692b94ef63dbdb7feaf674d1454a34ee787e' dependencies
+I, [2026-10-09T14:16:18.836216 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'protobuf/5beb012ce7b27ed86fe406d4beefbdfe440bfa40289134b25740720f7e6813b6' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.839419 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'protobuf/5beb012ce7b27ed86fe406d4beefbdfe440bfa40289134b25740720f7e6813b6' dependencies
+I, [2026-10-09T14:16:18.840653 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'pgbackrest/1780d87deb5e49e2f9606845981611b4b25f94833b39d90721fec6c954f28153' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.848536 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'pgbackrest/1780d87deb5e49e2f9606845981611b4b25f94833b39d90721fec6c954f28153' dependencies
+I, [2026-10-09T14:16:18.848678 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'pgbackrest/1780d87deb5e49e2f9606845981611b4b25f94833b39d90721fec6c954f28153' depends on package 'vmware-postgres/fe0bacd268e7ce9ae437f6f2706497de20bce3a318e4de4abba53b834454f97e'
+I, [2026-10-09T14:16:18.848730 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'vmware-postgres/fe0bacd268e7ce9ae437f6f2706497de20bce3a318e4de4abba53b834454f97e' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.852702 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'vmware-postgres/fe0bacd268e7ce9ae437f6f2706497de20bce3a318e4de4abba53b834454f97e' dependencies
+I, [2026-10-09T14:16:18.853542 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'vmware-postgres/fe0bacd268e7ce9ae437f6f2706497de20bce3a318e4de4abba53b834454f97e' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.854153 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 's3-upload-download/d56d6d21065704635bc3299f347d35ce2f35d34a608d0e3a48e77f8afcced7e1' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.859602 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 's3-upload-download/d56d6d21065704635bc3299f347d35ce2f35d34a608d0e3a48e77f8afcced7e1' dependencies
+I, [2026-10-09T14:16:18.859694 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 's3-upload-download/d56d6d21065704635bc3299f347d35ce2f35d34a608d0e3a48e77f8afcced7e1' depends on package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0'
+I, [2026-10-09T14:16:18.859725 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.864743 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' dependencies
+I, [2026-10-09T14:16:18.866110 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'postgres-backup-restore-tools/6df140ec18b42f044016b6896d28b28e02ff715f9e4fa51835812c90d8141ebc' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.870041 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'postgres-backup-restore-tools/6df140ec18b42f044016b6896d28b28e02ff715f9e4fa51835812c90d8141ebc' dependencies
+I, [2026-10-09T14:16:18.870144 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'postgres-backup-restore-tools/6df140ec18b42f044016b6896d28b28e02ff715f9e4fa51835812c90d8141ebc' depends on package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0'
+I, [2026-10-09T14:16:18.870188 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.871360 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'postgres-common/c146e5da880ccafb5bbadfb3cd017d878e3be872d3d4d5ed860d473415dfb9b6' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.871552 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'postgres-metrics-adapter/2723d542509726d6ca38b195f49fe18413d035049e26550663cc6eb2565ff3fd' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.877088 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'postgres-metrics-adapter/2723d542509726d6ca38b195f49fe18413d035049e26550663cc6eb2565ff3fd' dependencies
+I, [2026-10-09T14:16:18.877157 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'postgres-metrics-adapter/2723d542509726d6ca38b195f49fe18413d035049e26550663cc6eb2565ff3fd' depends on package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0'
+I, [2026-10-09T14:16:18.877186 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/8f8128af0520fb107b1f9b339fc0a79eeb70b16efd67bc0e41d770798b2543e0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.878517 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'vmware-postgres/fe0bacd268e7ce9ae437f6f2706497de20bce3a318e4de4abba53b834454f97e' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.878701 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'jq/7f22210d85dee68fb017779c2ad47b64f24b9467d5999c4fed510d56727ce2ae' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.881771 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'jq/7f22210d85dee68fb017779c2ad47b64f24b9467d5999c4fed510d56727ce2ae' dependencies
+I, [2026-10-09T14:16:18.882704 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'prom_scraper/c1c575a82c2742dcc794a474226ad43a3907f7d0656ef4048784191d31f222e0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.886125 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'prom_scraper/c1c575a82c2742dcc794a474226ad43a3907f7d0656ef4048784191d31f222e0' dependencies
+I, [2026-10-09T14:16:18.886192 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'prom_scraper/c1c575a82c2742dcc794a474226ad43a3907f7d0656ef4048784191d31f222e0' depends on package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4'
+I, [2026-10-09T14:16:18.886217 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/f1678e1905765af79ad2c9baf765d8a8771a319b3ff226fed1f534f50255dbd4' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.886910 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'adbr-agent/cafface88b927f3a81819793a724ef3144ab2387b34bbe0e20b77c95061b1147' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.890869 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'adbr-agent/cafface88b927f3a81819793a724ef3144ab2387b34bbe0e20b77c95061b1147' dependencies
+I, [2026-10-09T14:16:18.890964 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'adbr-agent/cafface88b927f3a81819793a724ef3144ab2387b34bbe0e20b77c95061b1147' depends on package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f'
+I, [2026-10-09T14:16:18.891000 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.891948 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'bpm/abca075b2719baa8de7bb5341d84b79e7da96bb5d8987bdf3d16365b84b3db1f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.895650 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'bpm/abca075b2719baa8de7bb5341d84b79e7da96bb5d8987bdf3d16365b84b3db1f' dependencies
+I, [2026-10-09T14:16:18.895777 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'bpm/abca075b2719baa8de7bb5341d84b79e7da96bb5d8987bdf3d16365b84b3db1f' depends on package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f'
+I, [2026-10-09T14:16:18.895824 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.898174 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' dependencies
+I, [2026-10-09T14:16:18.898223 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'bpm/abca075b2719baa8de7bb5341d84b79e7da96bb5d8987bdf3d16365b84b3db1f' depends on package 'bpm-runc/5fc3d18a9ad68c72049747c03daaa94b00b3892d3e5e99fa4ef25e4b1b25029a'
+I, [2026-10-09T14:16:18.898246 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'bpm-runc/5fc3d18a9ad68c72049747c03daaa94b00b3892d3e5e99fa4ef25e4b1b25029a' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.901146 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'bpm-runc/5fc3d18a9ad68c72049747c03daaa94b00b3892d3e5e99fa4ef25e4b1b25029a' dependencies
+I, [2026-10-09T14:16:18.901209 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'bpm-runc/5fc3d18a9ad68c72049747c03daaa94b00b3892d3e5e99fa4ef25e4b1b25029a' depends on package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f'
+I, [2026-10-09T14:16:18.901233 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1-linux/a9ec2c795feaf63781af31ef2f20627cde83daf214e6d0b15dbd1e965f39d67f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.901259 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'bpm/abca075b2719baa8de7bb5341d84b79e7da96bb5d8987bdf3d16365b84b3db1f' depends on package 'tini/a810420469a10080f375a4c062464f59374501791b1ac6143cc059ad54b20f75'
+I, [2026-10-09T14:16:18.901274 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'tini/a810420469a10080f375a4c062464f59374501791b1ac6143cc059ad54b20f75' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.902781 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'tini/a810420469a10080f375a4c062464f59374501791b1ac6143cc059ad54b20f75' dependencies
+I, [2026-10-09T14:16:18.904158 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'bosh-dns/1677608d2026276963ef81daaacad13b90c1d5642b4cc3ed64c6f5531d333fd0' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.911852 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'bosh-dns/1677608d2026276963ef81daaacad13b90c1d5642b4cc3ed64c6f5531d333fd0' dependencies
+I, [2026-10-09T14:16:18.911947 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'bosh-dns/1677608d2026276963ef81daaacad13b90c1d5642b4cc3ed64c6f5531d333fd0' depends on package 'golang-1-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256'
+I, [2026-10-09T14:16:18.911981 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.914097 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256' dependencies
+I, [2026-10-09T14:16:18.916563 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'system-metrics-agent/62686154cea369de1f99eb10f9c6065aaa09bbfe81a8d11d03527eeb424e0c9f' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.920513 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'system-metrics-agent/62686154cea369de1f99eb10f9c6065aaa09bbfe81a8d11d03527eeb424e0c9f' dependencies
+I, [2026-10-09T14:16:18.920583 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'system-metrics-agent/62686154cea369de1f99eb10f9c6065aaa09bbfe81a8d11d03527eeb424e0c9f' depends on package 'golang-1.26-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256'
+I, [2026-10-09T14:16:18.920609 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.923374 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.26-linux/8c9cb9ef73b4301c89d60a58126c2111193418dd7eb819cc163d3dbcd4f0b256' dependencies
+I, [2026-10-09T14:16:18.924154 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'otel-collector/efba9a818467b62f61f9a7830a57510f92e112dc8e54f4cce7d28aa55d6b6e6c' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.926732 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'otel-collector/efba9a818467b62f61f9a7830a57510f92e112dc8e54f4cce7d28aa55d6b6e6c' dependencies
+I, [2026-10-09T14:16:18.926782 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'otel-collector/efba9a818467b62f61f9a7830a57510f92e112dc8e54f4cce7d28aa55d6b6e6c' depends on package 'golang-1.26-linux/a2d12250d6eb3803abcaa1b0cd834930d35a98619d1396f01dc0bc81aa70d373'
+I, [2026-10-09T14:16:18.926807 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/a2d12250d6eb3803abcaa1b0cd834930d35a98619d1396f01dc0bc81aa70d373' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.930026 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'golang-1.26-linux/a2d12250d6eb3803abcaa1b0cd834930d35a98619d1396f01dc0bc81aa70d373' dependencies
+I, [2026-10-09T14:16:18.930963 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'opamp-supervisor/c6134e0e3a6e6ecc2b6b2d25edb6297231939159a1e1a030c297ddb5e28a2567' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.933478 #163483] [task:84098]  INFO -- DirectorJobRunner: Processing package 'opamp-supervisor/c6134e0e3a6e6ecc2b6b2d25edb6297231939159a1e1a030c297ddb5e28a2567' dependencies
+I, [2026-10-09T14:16:18.933541 #163483] [task:84098]  INFO -- DirectorJobRunner: Package 'opamp-supervisor/c6134e0e3a6e6ecc2b6b2d25edb6297231939159a1e1a030c297ddb5e28a2567' depends on package 'golang-1.26-linux/a2d12250d6eb3803abcaa1b0cd834930d35a98619d1396f01dc0bc81aa70d373'
+I, [2026-10-09T14:16:18.933570 #163483] [task:84098]  INFO -- DirectorJobRunner: Checking whether package 'golang-1.26-linux/a2d12250d6eb3803abcaa1b0cd834930d35a98619d1396f01dc0bc81aa70d373' needs to be compiled for stemcell 'bosh-vsphere-esxi-ubuntu-jammy-go_agent/1.1298'
+I, [2026-10-09T14:16:18.936387 #163483] [task:84098]  INFO -- DirectorJobRunner: All packages are already compiled
+I, [2026-10-09T14:16:18.936614 #163483] [task:84098]  INFO -- DirectorJobRunner: Updating deployment
+I, [2026-10-09T14:16:18.936692 #163483] [task:84098]  INFO -- DirectorJobRunner: Deleting no longer needed instances
+I, [2026-10-09T14:16:18.936716 #163483] [task:84098]  INFO -- DirectorJobRunner: No unneeded instances to delete
+I, [2026-10-09T14:16:18.989864 #163483] [task:84098]  INFO -- DirectorJobRunner: Creating missing VMs
+I, [2026-10-09T14:16:18.996749 #163483] [create_missing_vm(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)/1)]  INFO -- DirectorJobRunner: Creating missing VM
+I, [2026-10-09T14:16:19.036930 #163483] [create_missing_vm(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)/1)]  INFO -- DirectorJobRunner: Creating VM
+I, [2026-10-09T14:16:20.071417 #163869]  INFO -- [req_id cpi-988299]: Starting info...
+I, [2026-10-09T14:16:20.072049 #163869]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:16:20.159649 #163869]  INFO -- [req_id cpi-988299]: Finished info in 0.09 seconds
+I, [2026-10-09T14:16:20.796874 #163873]  INFO -- [req_id cpi-884497]: Starting create_vm...
+I, [2026-10-09T14:16:20.797415 #163873]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:16:21.502323 #163873]  INFO -- : Loaded vSphere 8.0 SDK
+I, [2026-10-09T14:16:22.177438 #163873]  INFO -- [req_id cpi-884497]: Using global ephemeral disk datastore pattern: ^(N4|S4)$
+I, [2026-10-09T14:16:22.177559 #163873]  INFO -- [req_id cpi-884497]: Using global datastore pattern ^(N4|S4)$ and global datastore cluster pattern ^()$ persistent: false
+I, [2026-10-09T14:16:22.207566 #163873]  INFO -- [req_id cpi-884497]: clusters: []
+I, [2026-10-09T14:16:22.234670 #163873]  INFO -- [req_id cpi-884497]: Initiating VM Allocator with VM Placement Criteria: Disk Config: [Disk ==> Disk CID: Size:8192 Ephemeral:true Target-DS:^(N4|S4)$ Existing-DS:]  Req Memory: 4096  Mem Headroom: 128
+I, [2026-10-09T14:16:22.234756 #163873]  INFO -- [req_id cpi-884497]: Gathering vm placement resources for vm placement allocator pipeline
+I, [2026-10-09T14:16:22.277910 #163873]  INFO -- [req_id cpi-884497]: Initiating Disk Allocator with Storage Criteria: Space Req: 8192 Target Pattern: ^(N4|S4)$
+I, [2026-10-09T14:16:22.315288 #163873]  INFO -- [req_id cpi-884497]: Initiating Disk Allocator with Storage Criteria: Space Req: 8192 Target Pattern: ^(N4|S4)$
+I, [2026-10-09T14:16:22.349177 #163873]  INFO -- [req_id cpi-884497]: Checking if ip '192.168.1.166' is in use
+I, [2026-10-09T14:16:22.356215 #163873]  INFO -- [req_id cpi-884497]: No IP conflicts detected
+I, [2026-10-09T14:16:22.356530 #163873]  INFO -- [req_id cpi-884497]: Creating vm: postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476 on (VSphereCloud::Resources::Cluster (name="BeastCluster")) stored in (VSphereCloud::Resources::Datastore (name="N4", mob="<[Vim.Datastore] datastore-122004>"))
+I, [2026-10-09T14:16:22.411357 #163873]  INFO -- [req_id cpi-884497]: Searching for stemcell sc-43c4ebed-8d10-4ad5-b51e-c7e3b2bac612 on datastore N4
+I, [2026-10-09T14:16:22.530976 #163873]  INFO -- [req_id cpi-884497]: Trying to find network VM Network for 1 time
+I, [2026-10-09T14:16:22.577914 #163873]  INFO -- [req_id cpi-884497]: Cloning vm: (VSphereCloud::Resources::VM (cid="sc-43c4ebed-8d10-4ad5-b51e-c7e3b2bac612")) to postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476
+I, [2026-10-09T14:16:24.680084 #163873]  INFO -- [req_id cpi-884497]: Using ephemeral disk UUID 6000c29d-9458-2899-299f-07c1a1e6e3a0
+I, [2026-10-09T14:16:24.684620 #163873]  INFO -- [req_id cpi-884497]: Updating current agent env from vm 'postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476' in datacenter 'DC'
+I, [2026-10-09T14:16:24.704105 #163873]  INFO -- [req_id cpi-884497]: Cleaning current agent env from vm 'postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476'
+I, [2026-10-09T14:16:24.734877 #163873]  INFO -- [req_id cpi-884497]: Trying to upload file to Datastore through Host System
+I, [2026-10-09T14:16:24.776387 #163873]  INFO -- [req_id cpi-884497]: Acquiring generic service ticket for URL: https://192.168.1.12/folder/postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476/env.json?dsName=N4 and Method: httpPut
+I, [2026-10-09T14:16:24.800021 #163873]  INFO -- [req_id cpi-884497]: Uploading file to https://192.168.1.12/folder/postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476/env.json?dsName=N4...
+I, [2026-10-09T14:16:24.817440 #163873]  INFO -- [req_id cpi-884497]: Successfully uploaded file.
+I, [2026-10-09T14:16:24.828721 #163873]  INFO -- [req_id cpi-884497]: Trying to upload file to Datastore through Host System
+I, [2026-10-09T14:16:24.872239 #163873]  INFO -- [req_id cpi-884497]: Acquiring generic service ticket for URL: https://192.168.1.12/folder/postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476/env.iso?dsName=N4 and Method: httpPut
+I, [2026-10-09T14:16:24.891083 #163873]  INFO -- [req_id cpi-884497]: Uploading file to https://192.168.1.12/folder/postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476/env.iso?dsName=N4...
+I, [2026-10-09T14:16:24.900671 #163873]  INFO -- [req_id cpi-884497]: Successfully uploaded file.
+I, [2026-10-09T14:16:26.999361 #163873]  INFO -- [req_id cpi-884497]: Upgrading virtual hardware on VM to 17
+I, [2026-10-09T14:16:28.028434 #163873]  INFO -- [req_id cpi-884497]: Powering on VM: (VSphereCloud::Resources::VM (cid="postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476"))
+W, [2026-10-09T14:16:29.122467 #163873]  WARN -- [req_id cpi-884497]: Custom field definition already exists: The name 'cpi_metadata_version' already exists.; Running method 'AddCustomFieldDef'
+I, [2026-10-09T14:16:29.138512 #163873]  INFO -- [req_id cpi-884497]: Finished create_vm in 8.34 seconds
+I, [2026-10-09T14:16:29.847266 #163883]  INFO -- [req_id cpi-870397]: Starting info...
+I, [2026-10-09T14:16:29.847403 #163883]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:16:29.914130 #163883]  INFO -- [req_id cpi-870397]: Finished info in 0.07 seconds
+I, [2026-10-09T14:16:30.599870 #163887]  INFO -- [req_id cpi-837493]: Starting set_vm_metadata...
+I, [2026-10-09T14:16:30.599952 #163887]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:16:31.325214 #163887]  INFO -- : Loaded vSphere 8.0 SDK
+W, [2026-10-09T14:16:32.013452 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'director' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.036965 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'deployment' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.059585 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'id' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.080324 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'job' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.102252 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'instance_group' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.125706 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'index' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.149048 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'name' already exists.; Running method 'AddCustomFieldDef'
+W, [2026-10-09T14:16:32.174527 #163887]  WARN -- [req_id cpi-837493]: Custom field definition already exists: The name 'created_at' already exists.; Running method 'AddCustomFieldDef'
+I, [2026-10-09T14:16:32.193354 #163887]  INFO -- [req_id cpi-837493]: Finished set_vm_metadata in 1.59 seconds
+I, [2026-10-09T14:17:11.302085 #163483] [create_missing_vm(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)/1)]  INFO -- DirectorJobRunner: deleting arp entries for the following ip addresses: ["192.168.1.166"]
+I, [2026-10-09T14:17:14.294248 #163483] [task:84098]  INFO -- DirectorJobRunner: agent_broadcaster: sync_dns: sending to 45 agents ["8082bcf3-769b-47bb-993e-27b74ef5e32e", "a9193c99-b17d-409d-a9bb-e6d4189339aa", "b28b1f50-f2ae-4742-b35e-411575858213", "a2646045-a138-4cf4-bf1e-59458f3ac142", "c00a1bd3-f429-49e6-82a7-1aad80d212e2", "4ebd8159-536f-4629-a15f-488cfdb68c8d", "ed8757d6-ca75-40ea-b9dc-45222f80d9d8", "8518c4a3-d9f4-464f-9258-438383e63baa", "e53e602c-6fc1-49a5-850d-0bc23295cc9c", "ae2d1a0d-3543-4134-8556-4c49fa029163", "edc78535-5b84-461f-a4e2-130d74ca2464", "b9e4643c-0cb4-4d3f-a446-717b3b002837", "d88a9333-ffbe-4d1c-9364-e19e018d4b49", "7e2906e8-e30b-494d-9c6f-07d988b70c41", "fa2c85e5-adfd-4670-8948-954056db8995", "eaccd27b-e175-4e5c-8236-c0dc2b9d9d02", "522661a7-3a18-441a-83b5-12036eb787d1", "9d7eba10-ce0e-4475-bd1e-be4cff2b466a", "a1df68c7-9aba-4d42-87df-5eb467a6f5b7", "2993cd76-be5b-4f18-9c57-d66a091711cc", "294ab326-1001-45c0-9322-21212a08509e", "1af3fcd1-4f61-4db6-a86b-0a00ac63d1fb", "4c0ce9d1-8714-4e7e-9025-eaeb28782802", "0f5bf8e3-5b57-4169-b914-54a6afef9e5e", "18ef2356-7f4a-4162-95f8-7a4867eecea0", "6d710c79-2a14-4f02-9aa6-940027f956b0", "817db227-a266-429b-994d-0cc9792e0f3d", "e9275fab-aa94-4294-8ae7-5fad4a6c3b17", "be489238-0e2c-4349-b34c-1265bec813a1", "04cf70fa-c43e-42c4-94ec-df22f181c562", "a7f7653d-989a-4089-a59f-483089909d7a", "30816665-bd07-4d4c-8bd3-f2224563793e", "10829033-3b0a-4ed8-b91e-c30fdc3031fe", "a8abb31c-57ba-448a-931f-e5f4e7257d06", "2ffdb732-bf51-4b7f-8fb3-5b2e837082ac", "f6a04f47-6095-4e0c-81d6-b9a3d67a2822", "1666b500-1848-43fb-8c37-3727aafe1f2d", "558f7852-ca8b-4a55-9af0-5e4fb748bf1a", "61b03b0d-0896-47a9-9863-26714fbfc1f8", "769ccc6e-3bc4-4473-bb50-0c7daf96acc2", "b5158c29-a045-48b7-bd59-3eb86a997ef6", "355da710-5878-4ca7-b340-0bdba8850e99", "d40c0603-4e47-49fb-a5b4-299225932ef9", "55186d9e-c544-4f60-9aa4-f7a06a5725f2", "605747bf-42ee-47b6-9ee1-03c151940f03"]
+W, [2026-10-09T14:17:24.829455 #163483] [task:84098]  WARN -- DirectorJobRunner: agent_broadcaster: sync_dns: no response received for 2 agent(s): [04cf70fa-c43e-42c4-94ec-df22f181c562, 355da710-5878-4ca7-b340-0bdba8850e99]
+I, [2026-10-09T14:17:24.829981 #163483] [task:84098]  INFO -- DirectorJobRunner: agent_broadcaster: sync_dns: attempted 45 agents in 10536ms (43 successful, 0 failed, 2 unresponsive)
+I, [2026-10-09T14:17:24.833092 #163483] [task:84098]  INFO -- DirectorJobRunner: Updating instances
+I, [2026-10-09T14:17:24.833216 #163483] [task:84098]  INFO -- DirectorJobRunner: Updating instances serially: postgres-instance
+I, [2026-10-09T14:17:24.834113 #163483] [task:84098]  INFO -- DirectorJobRunner: Updating instance: postgres-instance
+I, [2026-10-09T14:17:24.834789 #163483] [task:84098]  INFO -- DirectorJobRunner: Deleting no longer needed instances
+I, [2026-10-09T14:17:24.852675 #163483] [task:84098]  INFO -- DirectorJobRunner: Found 1 instances to update
+I, [2026-10-09T14:17:24.852724 #163483] [task:84098]  INFO -- DirectorJobRunner: Starting to update az '#<Bosh::Director::DeploymentPlan::AvailabilityZone:0x00007f94f89ab700>'
+I, [2026-10-09T14:17:24.852757 #163483] [task:84098]  INFO -- DirectorJobRunner: Starting to update instance group 'postgres-instance'
+I, [2026-10-09T14:17:24.852879 #163483] [task:84098]  INFO -- DirectorJobRunner: Starting canary update num_canaries=1
+I, [2026-10-09T14:17:24.853036 #163483] [task:84098]  INFO -- DirectorJobRunner: Waiting for canaries to update
+I, [2026-10-09T14:17:24.859401 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Updating instance postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0), changes: "dirty, packages, persistent_disk, configuration, state, tags"
+I, [2026-10-09T14:17:43.311355 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Running pre-stop for postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:17:43.316737 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Running drain for postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:17:43.343240 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Stopping instance postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:17:44.353992 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Running post-stop for postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:17:44.363845 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Snapshots are disabled; skipping
+I, [2026-10-09T14:17:44.364992 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Updating persistent disk
+I, [2026-10-09T14:17:45.130130 #164491]  INFO -- [req_id cpi-495992]: Starting info...
+I, [2026-10-09T14:17:45.130912 #164491]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:45.208011 #164491]  INFO -- [req_id cpi-495992]: Finished info in 0.08 seconds
+I, [2026-10-09T14:17:45.855545 #164495]  INFO -- [req_id cpi-453728]: Starting create_disk...
+I, [2026-10-09T14:17:45.856096 #164495]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:46.491479 #164495]  INFO -- : Loaded vSphere 8.0 SDK
+I, [2026-10-09T14:17:47.110301 #164495]  INFO -- [req_id cpi-453728]: Cloud properties given : {"type"=>"thick"}
+I, [2026-10-09T14:17:47.110926 #164495]  INFO -- [req_id cpi-453728]: Creating disk with size: 10240
+I, [2026-10-09T14:17:47.112588 #164495]  INFO -- [req_id cpi-453728]: Using global datastore pattern ^(S4|N4)$ and global datastore cluster pattern ^()$ persistent: true
+I, [2026-10-09T14:17:47.153164 #164495]  INFO -- [req_id cpi-453728]: clusters: []
+I, [2026-10-09T14:17:47.153787 #164495]  INFO -- [req_id cpi-453728]: Initiating Disk Allocator with Storage Criteria: Space Req: 10240 Target Pattern: ^(S4|N4)$
+I, [2026-10-09T14:17:47.154715 #164495]  INFO -- [req_id cpi-453728]: Gathering storage placement resources for disk allocator pipeline
+I, [2026-10-09T14:17:47.295696 #164495]  INFO -- [req_id cpi-453728]: Trying to create persistent disk disk-11c86f83-373c-468b-a548-a0c53a06b5f8 on datastore: S4
+I, [2026-10-09T14:17:48.340920 #164495]  INFO -- [req_id cpi-453728]: Created disk: #<VSphereCloud::Resources::PersistentDisk:0x00007f7d6b863220 @size_in_mb=10240, @datastore=<Datastore: / S4>, @folder="lab1", @cid="disk-11c86f83-373c-468b-a548-a0c53a06b5f8">
+I, [2026-10-09T14:17:48.341064 #164495]  INFO -- [req_id cpi-453728]: Finished create_disk in 2.49 seconds
+I, [2026-10-09T14:17:49.089262 #164500]  INFO -- [req_id cpi-331712]: Starting info...
+I, [2026-10-09T14:17:49.089342 #164500]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:49.167807 #164500]  INFO -- [req_id cpi-331712]: Finished info in 0.08 seconds
+I, [2026-10-09T14:17:49.180059 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Attaching disk disk-11c86f83-373c-468b-a548-a0c53a06b5f8
+I, [2026-10-09T14:17:49.181584 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Acquiring VM lock on postgres-instance_service-instance-a8d11c73-e850-4ce1-b4ea-5bb7c7c_625719332476
+I, [2026-10-09T14:17:49.876873 #164505]  INFO -- [req_id cpi-928059]: Starting attach_disk...
+I, [2026-10-09T14:17:49.877648 #164505]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:50.529122 #164505]  INFO -- : Loaded vSphere 8.0 SDK
+I, [2026-10-09T14:17:51.184220 #164505]  INFO -- [req_id cpi-928059]: Using global datastore pattern ^(S4|N4)$ and global datastore cluster pattern ^()$ persistent: true
+I, [2026-10-09T14:17:51.216255 #164505]  INFO -- [req_id cpi-928059]: clusters: []
+E, [2026-10-09T14:17:51.290372 #164505] ERROR -- [req_id cpi-928059]: Worker thread raised exception: Successfully found disk '#<VSphereCloud::Resources::PersistentDisk:0x00007f056a976370>' (this is not an error) - /var/vcap/data/packages/vsphere_cpi/f91185b35469bed9086679a7921734d9cb53bdc9/lib/cloud/vsphere/resources/datacenter.rb:198:in `block (2 levels) in find_disk_cid_in_datastores'
+I, [2026-10-09T14:17:52.288599 #164505]  INFO -- [req_id cpi-928059]: Using global datastore pattern ^(S4|N4)$ and global datastore cluster pattern ^()$ persistent: true
+I, [2026-10-09T14:17:52.322075 #164505]  INFO -- [req_id cpi-928059]: clusters: []
+I, [2026-10-09T14:17:52.390199 #164505]  INFO -- [req_id cpi-928059]: Attaching disk
+I, [2026-10-09T14:17:53.421422 #164505]  INFO -- [req_id cpi-928059]: Finished attaching disk
+I, [2026-10-09T14:17:54.585149 #164505]  INFO -- [req_id cpi-928059]: adding disk; disk.enableUUID is TRUE, using volume uuid 6000c295-4bb4-102b-2161-4b6ea97789cc for mounting
+I, [2026-10-09T14:17:54.585274 #164505]  INFO -- [req_id cpi-928059]: Finished attach_disk in 4.71 seconds
+I, [2026-10-09T14:17:56.341156 #164512]  INFO -- [req_id cpi-935190]: Starting info...
+I, [2026-10-09T14:17:56.341240 #164512]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:56.404862 #164512]  INFO -- [req_id cpi-935190]: Finished info in 0.06 seconds
+I, [2026-10-09T14:17:57.142050 #164516]  INFO -- [req_id cpi-373631]: Starting set_disk_metadata...
+I, [2026-10-09T14:17:57.142134 #164516]  INFO -- : Fetching vSphere version to locate SDK
+I, [2026-10-09T14:17:57.803270 #164516]  INFO -- : Loaded vSphere 8.0 SDK
+I, [2026-10-09T14:17:58.413133 #164516]  INFO -- [req_id cpi-373631]: Finished set_disk_metadata in 1.27 seconds
+I, [2026-10-09T14:17:58.449219 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Mounting disk 'disk-11c86f83-373c-468b-a548-a0c53a06b5f8' for instance 'postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)'
+I, [2026-10-09T14:18:22.559825 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Applying VM state
+I, [2026-10-09T14:18:26.825865 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Running pre-start for postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:18:28.852777 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Starting instance postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:18:29.895428 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Waiting for 30.0 seconds to check postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) status
+I, [2026-10-09T14:18:59.895695 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Checking if postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) has been updated after 30.0 seconds
+I, [2026-10-09T14:18:59.904471 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Waiting for 15.0 seconds to check postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) status
+I, [2026-10-09T14:19:14.904785 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Checking if postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) has been updated after 15.0 seconds
+I, [2026-10-09T14:19:14.914340 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Waiting for 15.0 seconds to check postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) status
+I, [2026-10-09T14:19:29.914571 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Checking if postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0) has been updated after 15.0 seconds
+I, [2026-10-09T14:19:29.925469 #163483] [canary_update(postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0))]  INFO -- DirectorJobRunner: Running post-start for postgres-instance/14f078a3-6f50-4179-8609-6e541970f925 (0)
+I, [2026-10-09T14:19:30.940955 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished canary update
+I, [2026-10-09T14:19:30.940974 #163483] [task:84098]  INFO -- DirectorJobRunner: Continuing the rest of the update
+I, [2026-10-09T14:19:30.941028 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished the rest of the update
+I, [2026-10-09T14:19:30.941086 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished updating instance group 'postgres-instance'
+I, [2026-10-09T14:19:30.941103 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished updating az '#<Bosh::Director::DeploymentPlan::AvailabilityZone:0x00007f94f89ab700>'
+I, [2026-10-09T14:19:30.941209 #163483] [task:84098]  INFO -- DirectorJobRunner: Committing updates
+I, [2026-10-09T14:19:30.964227 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished updating deployment
+I, [2026-10-09T14:19:31.997193 #163483] [task:84098]  INFO -- DirectorJobRunner: sending update deployment end event
+I, [2026-10-09T14:19:31.997299 #163483] [task:84098]  INFO -- DirectorJobRunner: Finished updating deployment
+I, [2026-10-09T14:19:32.019948 #163483] [task:84098]  INFO -- DirectorJobRunner: Done
+I, [2026-10-09T14:19:32.023594 #163483] []  INFO -- DirectorJobRunner: Task took 3 minutes 19.059105899000002 seconds to process.

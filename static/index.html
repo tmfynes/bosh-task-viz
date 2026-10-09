@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>bosh-task-viz</title>
+<link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>bosh-task-viz <span>live</span><span id="demo-badge" class="badge-demo" hidden>DEMO</span></h1>
+    <div class="pill" id="pill-ssh"><span class="dot"></span><span id="pill-ssh-text">ssh …</span></div>
+    <div class="pill" id="pill-bosh"><span class="dot"></span><span id="pill-bosh-text">bosh …</span></div>
+    <div class="header-spacer"></div>
+    <div class="header-stat"><b id="stat-processing">0</b> processing</div>
+    <div class="header-stat">updated <b id="stat-age">–</b></div>
+  </header>
+  <main>
+    <nav class="rail" id="rail"></nav>
+    <section class="gantt-wrap">
+      <div class="tabs" id="tabs"></div>
+      <div class="gantt-header">
+        <div>
+          <div class="title" id="gantt-title">–</div>
+          <div class="meta" id="gantt-meta"></div>
+        </div>
+      </div>
+      <div class="gantt-legend" id="gantt-legend"></div>
+      <div class="gantt-scroll" id="gantt-scroll">
+        <svg id="gantt"></svg>
+        <div class="gantt-empty" id="gantt-empty" hidden></div>
+      </div>
+    </section>
+  </main>
+  <div class="drawer">
+    <div class="drawer-header">
+      <b>debug log</b>
+      <span id="drawer-count">0 lines</span>
+      <span id="drawer-paused" hidden>(paused — hover to inspect)</span>
+    </div>
+    <div class="drawer-log" id="drawer-log"></div>
+  </div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+<script src="/static/d3.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.env
+*.pem
+*id_ed25519*
+VCAP*
+__pycache__/
+*.pyc
+.venv/
+credentials.json
+*credentials*.json
+

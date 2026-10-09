@@ -1,0 +1,7 @@
+{
+  "host": "om1.homelab1.fynesy.com",
+  "ip": "192.168.1.20",
+  "port": 22,
+  "user": "ubuntu",
+  "private_key": "-----BEGIN OPENSSH PRIVATE KEY-----\nREPLACE_WITH_FULL_KEY_NEWLINES_AS_\\n\n-----END OPENSSH PRIVATE KEY-----\n"
+}
